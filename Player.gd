@@ -1,8 +1,15 @@
 extends KinematicBody2D
 
+
+export (int) var health = 3
+
 const MAX_SPEED = 200
 const ACCELERATION = 1000
 const FRICTION = 800
+
+const MAX_AMMO = 3
+
+export (int) var ammo = 3
 
 var spells = [
 	{
@@ -48,7 +55,7 @@ func get_input(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_just_pressed("fire") and ammo > 0:
 		shoot()
 	if Input.is_action_just_pressed("change_spell"):
 		change_spell()
@@ -62,6 +69,7 @@ func change_spell():
 	current_bullet = spells[spell_index]
 	print("changed spell")
 	get_node("RichTextLabel").updateText()
+	ammo = MAX_AMMO
 	
 	
 func shoot():
@@ -72,13 +80,14 @@ func shoot():
 		pos.x -= 20	
 	b.start(pos, aim_direction)
 	get_parent().add_child(b)
+	ammo -= 1
 
 func _physics_process(delta):
 	get_input(delta)
 	velocity = move_and_slide(velocity)
 
 func add_orb(color):
-	pass
+	change_spell()
 	print("Orb "+ color + " collected ... do something with it")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
