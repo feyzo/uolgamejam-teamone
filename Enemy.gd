@@ -3,7 +3,7 @@ extends KinematicBody2D
 # TODO Set = to reference to player scene
 onready var player = get_node("../Player")
 
-var health = 3
+export var health = 3
 
 var state = 'calm'
 
@@ -31,7 +31,7 @@ func _physics_process(delta):
 			move_and_collide(direction * speed * delta)
 
 func die():
-	# TODO Call player swap spell function
+	Global.Player.change_spell()
 	# TODO Play death sound
 	self.queue_free()
 
@@ -47,6 +47,7 @@ func _on_Aggro_Area_body_exited(body):
 
 
 func _on_Hitbox_body_entered(body):
+	# don't think this works ?
 	if body.is_in_group("projectiles"):
 		health -= 1
 		# TODO Play enemy hurt sound
@@ -54,5 +55,8 @@ func _on_Hitbox_body_entered(body):
 		self.player.health -= 1
 		print("Player damaged")
 		
-func hit():
+func hit(damage_taken):
+	health -= 1
+	$AudioStream_Hurt.play()
 	print("I must die !")
+	print("damage taken = " + str(damage_taken))

@@ -3,6 +3,7 @@ extends KinematicBody2D
 var  speed = 300
 var velocity = Vector2()
 var alpha = 0
+export var damage = 1
 
 func start(pos, dir):
 	$AnimatedSprite.modulate = Color(1,1,1,0)
@@ -19,7 +20,7 @@ func _physics_process(delta):
 		queue_free()
 		#velocity = velocity.bounce(collision.normal)
 		if collision.collider.has_method("hit"):
-			collision.collider.hit()
+			collision.collider.hit(damage)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

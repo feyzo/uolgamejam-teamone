@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://PNG/Sprites/tentacoolio.png" type="Texture" id=1]
 [ext_resource path="res://Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Tentical_Monster_Agro.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 29.4423
@@ -35,6 +36,9 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource( 3 )
+
+[node name="AudioStream_Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="Aggro Area" to="." method="_on_Aggro_Area_body_entered"]
 [connection signal="body_exited" from="Aggro Area" to="." method="_on_Aggro_Area_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
