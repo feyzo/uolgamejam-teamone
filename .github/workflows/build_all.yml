@@ -2,23 +2,23 @@ name: Build for all platforms
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2.0.0
-    - name: Build HTML5
-      uses: josephbmanley/build-godot-action@v1.3.3
-      with:
-        name: TankBattleRoyal
-        preset: HTML5
-        package: true
-        projectDir: .
-        debugMode: false
-        subdirectory: 'html5'
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Build HTML5
+        uses: josephbmanley/build-godot-action@v1.3.3
+        with:
+          name: TankBattleRoyal
+          preset: HTML5
+          package: true
+          projectDir: .
+          debugMode: false
+          subdirectory: 'html5'
       - name: 'Deploy to Netlify'
         uses: netlify/actions/cli@master
         with:
@@ -26,4 +26,3 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
