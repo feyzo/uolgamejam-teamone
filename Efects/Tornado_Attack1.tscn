@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Fireball.gd" type="Script" id=1]
-[ext_resource path="res://Efects/Fireball2.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Efects/Tornadoloop.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Fireball.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -11,17 +11,20 @@ radius = 13.0579
 [node name="Fireball" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -21.6899, 0 )
+position = Vector2( 0.225903, -19.6564 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -24.1751, -0.225933 )
-frames = ExtResource( 2 )
-frame = 16
+position = Vector2( -0.903685, -26.6605 )
+frames = ExtResource( 1 )
+frame = 19
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}

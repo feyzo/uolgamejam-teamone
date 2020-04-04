@@ -2,6 +2,12 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 
+
+var Bullet = preload("res://Efects/Fireball_Attack1.tscn")
+var Tornado = preload("res://Efects/Tornado_Attack1.tscn")
+var current_bullet = Bullet
+var spell_index = 0
+var spells = [Bullet, Tornado]
 var velocity = Vector2()
 
 var aim_direction
@@ -22,10 +28,26 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('up'):
 		velocity.y -= 1
+	if Input.is_action_just_pressed("fire"):
+		shoot()
+	if Input.is_action_just_pressed("change_spell"):
+		change_spell()
 	velocity = velocity.normalized() * speed
 	aim_direction = self.get_angle_to(get_global_mouse_position())
 
-
+func change_spell():
+	spell_index += 1
+	if spell_index > spells.size() -1 :
+		spell_index = 0
+	current_bullet = spells[spell_index]
+	print("changed spell")
+	
+func shoot():
+	# "Muzzle" is a Position2D placed at the barrel of the gun.
+	var b = current_bullet.instance()
+	b.start($Muzzle.global_position, rotation)
+	get_parent().add_child(b)
+	
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)

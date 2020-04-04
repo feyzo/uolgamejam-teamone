@@ -31,3 +31,6 @@ smoothing_speed = 20.0
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 40, 0 )
