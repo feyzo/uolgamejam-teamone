@@ -13,18 +13,13 @@ jobs:
     - name: Build HTML5
       uses: josephbmanley/build-godot-action@v1.3.3
       with:
-        # Name of the exported binary
         name: TankBattleRoyal
-        # Name of the preset in `export_presets.cfg` to use
         preset: HTML5
-        # Set true to output an artifact zip file
         package: true
-        # Location of Godot project in repository
         projectDir: .
-        # Whether or not to use `--export-debug`
         debugMode: false
-        subdirectory: html5
-      - name: Deploy to Netlify
+        subdirectory: 'html5'
+      - name: 'Deploy to Netlify'
         uses: netlify/actions/cli@master
         with:
           args: deploy --dir=html5 --prod
