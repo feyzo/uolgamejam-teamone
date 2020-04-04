@@ -4,9 +4,9 @@ var  speed = 300
 var velocity = Vector2()
 
 func start(pos, dir):
-	rotation = dir
+	#rotation = dir
 	position = pos
-	velocity = Vector2(speed, 0).rotated(rotation)
+	velocity = Vector2(speed, 0).rotated(dir)
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
