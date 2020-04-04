@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Build HTML5
-        uses: josephbmanley/build-godot-action@v1.3.3
+        uses: josephbmanley/build-godot-action@v1.3.2
         with:
           name: UoLGJ-TeamOne
           preset: HTML5
