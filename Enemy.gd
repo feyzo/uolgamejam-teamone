@@ -57,5 +57,6 @@ func _on_Hitbox_body_entered(body):
 		
 func hit(damage_taken):
 	health -= 1
+	$AudioStream_Hurt.play()
 	print("I must die !")
 	print("damage taken = " + str(damage_taken))
