@@ -21,11 +21,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Move files
         run: |
-          unzip /home/runner/.local/share/godot/dist/HTML5.zip -d /github/workspace/exports/html5
+          unzip ~/.local/share/godot/dist/HTML5.zip -d ~/work/uolgamejam-teamone/uolgamejam-teamone/html5
+
       - name: 'Deploy to Netlify'
         uses: netlify/actions/cli@master
         with:
-          args: deploy --dir=exports/html5 --prod
+          args: deploy --dir=html5 --prod
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
