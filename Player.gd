@@ -54,9 +54,7 @@ func change_spell():
 	spell_index += 1
 	if spell_index > spells.size() - 1:
 		spell_index = 0
-
 	current_bullet = spells[spell_index]
-
 	print("changed spell")
 	get_node("RichTextLabel").updateText()
 	
@@ -64,7 +62,10 @@ func change_spell():
 func shoot():
 	# "Muzzle" is a Position2D placed at the barrel of the gun.
 	var b = current_bullet.res.instance()
-	b.start($Muzzle.global_position, aim_direction)
+	var pos = $Muzzle.global_position
+	if get_global_mouse_position() < position:
+		pos.x -= 20	
+	b.start(pos, aim_direction)
 	get_parent().add_child(b)
 
 func _physics_process(delta):

@@ -3,13 +3,18 @@ extends KinematicBody2D
 var  speed = 300
 var velocity = Vector2()
 var IceExplode = preload("res://Efects/Ice_Expode.tscn")
+var alpha = 0
 
 func start(pos, dir):
+	$AnimatedSprite.modulate = Color(1,1,1,0)
 	rotation = dir
 	position = pos
 	velocity = Vector2(speed, 0).rotated(rotation)
 
 func _physics_process(delta):
+	alpha += 0.1
+	clamp(alpha,0,1)
+	$AnimatedSprite.modulate = Color(1,1,1,alpha)
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		queue_free()
