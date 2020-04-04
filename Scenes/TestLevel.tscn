@@ -33,3 +33,11 @@ tile_data = PoolIntArray( -131063, 0, 0, -131062, 25, 0, -131061, 1, 0, -131060,
 
 [node name="Node2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 257.179, 261.056 )
+
+[node name="Area2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 108.558, 420.016 )
+orb_color = "red"
+
+[node name="Area2D2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 307.581, 403.215 )
+orb_color = "green"
