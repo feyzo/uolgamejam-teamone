@@ -5,7 +5,8 @@ func _ready():
 
 
 func _process(delta):
-	$CanvasLayer/MarginContainer/RichTextLabel.text = "Health " + str(Global.Player.health)
+	$CanvasLayer/MarginContainer/RichTextLabel.text = "Health: " + str(Global.Player.health)
+	$CanvasLayer/MarginContainer2/RichTextLabel_mana.text = "Spells to Cast: " + str(Global.Player.ammo)
 	check_win_state()
 
 
