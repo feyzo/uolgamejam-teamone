@@ -9,27 +9,29 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 frames = ExtResource( 1 )
 animation = "Fireball"
+frame = 41
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 visible = false
 frames = ExtResource( 2 )
-frame = 28
+frame = 35
 playing = true
 
 [node name="Fireball" type="AnimatedSprite" parent="."]
 visible = false
 frames = ExtResource( 3 )
-frame = 10
+frame = 17
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+visible = false
 frames = ExtResource( 4 )
 frame = 24
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+visible = false
 frames = ExtResource( 5 )
