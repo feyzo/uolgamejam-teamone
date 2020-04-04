@@ -242,6 +242,7 @@ position = Vector2( 422.893, 1493.92 )
 orb_color = "red"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 21.202
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchor_right = 0.09

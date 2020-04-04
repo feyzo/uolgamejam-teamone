@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PNG/Sprites/player.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://PNG/Tiles/Light2d.png" type="Texture" id=3]
+[ext_resource path="res://GameOverScreen.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 41.3652
@@ -34,6 +35,8 @@ smoothing_speed = 20.0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Game Over" parent="Camera2D" instance=ExtResource( 4 )]
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.4, 0.4 )

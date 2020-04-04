@@ -39,9 +39,11 @@ var spell_index = 0
 var velocity = Vector2.ZERO
 
 var aim_direction
+var dead = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$"Camera2D/Game Over".visible = false
 	Global.Player = self
 	self.add_to_group("player")
 
@@ -92,7 +94,10 @@ func shoot():
 func _physics_process(delta):
 	if health <= 0:
 		die()
-	get_input(delta)
+	if not dead:
+		get_input(delta)
+	if dead:
+		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
 
 func add_orb(color):
@@ -100,8 +105,9 @@ func add_orb(color):
 	print("Orb "+ color + " collected ... do something with it")
 
 func die():
-	Global.add_child(GAME_OVER_SCREEN.instance())
-	self.queue_free()
+	$"Camera2D/Game Over".visible = true
+	get_parent().add_child(GAME_OVER_SCREEN.instance())
+	dead = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
