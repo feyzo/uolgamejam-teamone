@@ -19,6 +19,10 @@ config/name="UoLGJ TeamONE"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+mouse_cursor/custom_image="res://PNG/AimCoursor.png"
+
 [input]
 
 up={
