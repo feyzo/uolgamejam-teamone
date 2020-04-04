@@ -32,13 +32,14 @@ func _physics_process(delta):
 
 func die():
 	Global.Player.change_spell()
-	# TODO Play death sound
+	get_node("AudioStream_Death").play()
 	self.queue_free()
 
 
 func _on_Aggro_Area_body_entered(body):
 	if body == player:
 		state = 'aggro'
+		get_node("AudioStream_Agro").play()
 
 
 func _on_Aggro_Area_body_exited(body):
