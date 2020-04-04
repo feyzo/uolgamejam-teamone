@@ -11,5 +11,5 @@ dest_files=[ "res://.import/OrbPickup.ogg-1cf9992342c7797211bd25ca5d24bdcf.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

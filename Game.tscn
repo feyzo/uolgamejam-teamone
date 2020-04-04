@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLevel_001.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://FireEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://BlobEnemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Audio/Explore_Theme.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Orb_001.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
@@ -39,8 +40,28 @@ position = Vector2( 1380.41, 158.411 )
 health = 5
 speed = 20
 
+[node name="FireeEnemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2275.61, 1421.85 )
+health = 5
+speed = 20
+
+[node name="FireeEnemy4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2813.73, 873.172 )
+health = 5
+speed = 20
+
+[node name="FireeEnemy5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2810.72, 1049.53 )
+health = 5
+speed = 20
+
+[node name="FireeEnemy6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2812.22, 1237.95 )
+health = 5
+speed = 20
+
 [node name="FireeEnemy2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1390.34, 609.663 )
+position = Vector2( 1223.73, 576.343 )
 health = 5
 speed = 20
 
@@ -48,11 +69,174 @@ speed = 20
 position = Vector2( 884.509, 359.015 )
 speed = 30
 
+[node name="TentacleEnemy5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 137.183, 500.229 )
+speed = 30
+
+[node name="TentacleEnemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1160.59, 1369.73 )
+speed = 30
+
+[node name="TentacleEnemy3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1635.01, 1361.8 )
+speed = 30
+
+[node name="TentacleEnemy8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3115.51, 884.53 )
+speed = 30
+
+[node name="TentacleEnemy10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3514.85, 979.984 )
+speed = 30
+
+[node name="TentacleEnemy9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3117.46, 1192.32 )
+speed = 30
+
+[node name="TentacleEnemy4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1419.22, 1655.33 )
+speed = 30
+
+[node name="TentacleEnemy6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 808.348, 1444.3 )
+speed = 30
+
+[node name="TentacleEnemy7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 406.918, 1875.88 )
+speed = 30
+
+[node name="TentacleEnemy11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 422.503, 2518.73 )
+speed = 30
+
+[node name="TentacleEnemy12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1221.19, 2549.9 )
+speed = 30
+
+[node name="TentacleEnemy13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1860.15, 2468.08 )
+speed = 30
+
 [node name="BlobEnemy" parent="." instance=ExtResource( 7 )]
 position = Vector2( 580.924, 587.99 )
 
+[node name="BlobEnemy3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 868.513, 2945.2 )
+
+[node name="BlobEnemy4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1356.92, 2957.79 )
+
+[node name="BlobEnemy5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2134.84, 2733.73 )
+
+[node name="BlobEnemy6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2844.78, 2728.69 )
+
 [node name="BlobEnemy2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 566.484, 164.715 )
+position = Vector2( 595.044, 258.33 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="Area2D" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 145.471, 191.125 )
+
+[node name="Area2D2" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 149.471, 576.126 )
+orb_color = "green"
+
+[node name="Area2D3" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 593.473, 375.125 )
+orb_color = "red"
+
+[node name="Area2D4" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1154.48, 578.126 )
+
+[node name="Area2D5" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1151.32, 1302.34 )
+orb_color = "green"
+
+[node name="Area2D6" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1638.69, 1303.39 )
+orb_color = "green"
+
+[node name="Area2D7" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1403.54, 1740.65 )
+
+[node name="Area2D8" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1375.53, 2225.5 )
+orb_color = "red"
+
+[node name="Area2D21" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 2807.33, 1380.06 )
+orb_color = "red"
+
+[node name="Area2D22" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 2819.02, 752.793 )
+orb_color = "red"
+
+[node name="Area2D23" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 3019.66, 891.103 )
+orb_color = "red"
+
+[node name="Area2D28" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 3545.63, 949.544 )
+orb_color = "red"
+
+[node name="Area2D24" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 3021.61, 1052.79 )
+orb_color = "green"
+
+[node name="Area2D27" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 3541.73, 1023.57 )
+
+[node name="Area2D25" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 3023.56, 1195 )
+orb_color = "red"
+
+[node name="Area2D26" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 3023.56, 1195 )
+orb_color = "red"
+
+[node name="Area2D9" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1186.05, 2597.08 )
+
+[node name="Area2D10" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1571.32, 2600.24 )
+orb_color = "red"
+
+[node name="Area2D11" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1893.43, 2400.24 )
+
+[node name="Area2D12" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 611.315, 2408.66 )
+orb_color = "green"
+
+[node name="Area2D13" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 424.999, 2588.66 )
+
+[node name="Area2D17" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 1418.26, 2961.53 )
+orb_color = "red"
+
+[node name="Area2D18" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 804.215, 2958.36 )
+orb_color = "red"
+
+[node name="Area2D19" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 2741.55, 2731.46 )
+
+[node name="Area2D20" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 2217.95, 2736.22 )
+orb_color = "red"
+
+[node name="Area2D14" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 417.63, 2226.55 )
+orb_color = "red"
+
+[node name="Area2D15" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 406.051, 1946.55 )
+
+[node name="Area2D16" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
+position = Vector2( 422.893, 1493.92 )
+orb_color = "red"

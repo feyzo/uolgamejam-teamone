@@ -11,5 +11,5 @@ dest_files=[ "res://.import/IceCast.ogg-a35e5d4cbeb66d970875cd50f60a7874.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

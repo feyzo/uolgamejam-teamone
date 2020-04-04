@@ -11,5 +11,5 @@ dest_files=[ "res://.import/EmberAgro.ogg-1617e7cda7babb35e66580cc0c6ed43e.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
