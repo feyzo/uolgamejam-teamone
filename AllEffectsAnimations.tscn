@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Efects/Fireball.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Efects/Tornadoloop.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Efects/Fireball2.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Efects/IceCast.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Efects/IcePick.tres" type="SpriteFrames" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 1 )
+animation = "Fireball"
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 2 )
+frame = 28
+playing = true
+
+[node name="Fireball" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 3 )
+frame = 10
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+frames = ExtResource( 4 )
+frame = 24
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+frames = ExtResource( 5 )

@@ -5,9 +5,10 @@ export (int) var speed = 200
 
 var Bullet = preload("res://Efects/Fireball_Attack1.tscn")
 var Tornado = preload("res://Efects/Tornado_Attack1.tscn")
+var IceAttack = preload("res://Efects/Ice_Attack1.tscn")
 var current_bullet = Bullet
 var spell_index = 0
-var spells = [Bullet, Tornado]
+var spells = [Bullet, Tornado, IceAttack]
 var velocity = Vector2()
 
 var aim_direction
