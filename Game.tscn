@@ -12,10 +12,10 @@ script = ExtResource( 5 )
 [node name="TestLevelNode" parent="." instance=ExtResource( 2 )]
 position = Vector2( -172.895, -102.053 )
 
-[node name="Player" parent="TestLevelNode" instance=ExtResource( 1 )]
-position = Vector2( 102.656, 118.019 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -70.239, 15.966 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TestLevelNode/Player"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Player"]
 margin_left = -119.0
 margin_top = 13.0
 margin_right = -26.0
@@ -28,8 +28,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasModulate" type="CanvasModulate" parent="TestLevelNode"]
-color = Color( 0.352941, 0.556863, 0.67451, 1 )
+[node name="TentacleEnemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 90.964, 79.785 )
 
-[node name="TentacleEnemy" parent="TestLevelNode" instance=ExtResource( 4 )]
-position = Vector2( 263.859, 181.838 )
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -210.037, -69.5541 )
+color = Color( 0.352941, 0.556863, 0.67451, 1 )

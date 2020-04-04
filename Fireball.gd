@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if timer_to_die > 100:
 		queue_free()
 	alpha += 0.1
-	clamp(alpha,0,1)
+	alpha = clamp(alpha,0,1)
 	$AnimatedSprite.modulate = Color(1,1,1,alpha)
 	var collision = move_and_collide(velocity * delta)
 	if collision:
