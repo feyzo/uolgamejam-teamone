@@ -33,8 +33,13 @@ video {
 }
 
 .title {
-	text-align: center;
+	margin: 0;
 	font-size: 3em;
+	text-align: center;
+	line-height: 2em;
+}
+
+.description {
 	margin: 0;
 }
 
@@ -46,7 +51,7 @@ video {
 }
 
 .buttons-wrapper {
-	padding-top: 20px;
+	padding-top: 2em;
 	display: flex;
 	justify-content: space-between;
 }
