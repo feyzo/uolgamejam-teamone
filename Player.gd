@@ -57,12 +57,15 @@ func change_spell():
 	current_bullet = spells[spell_index]
 
 	print("changed spell")
-	get_parent().get_node("RichTextLabel").set_text(current_bullet.name)
+	get_node("RichTextLabel").updateText()
+	
 	
 func shoot():
 	# "Muzzle" is a Position2D placed at the barrel of the gun.
 	var b = current_bullet.res.instance()
-	b.start($Muzzle.global_position, aim_direction)
+	var pos = $Muzzle.global_position
+	pos.x -= 55
+	b.start(pos, aim_direction)
 	get_parent().add_child(b)
 
 func _physics_process(delta):
