@@ -240,3 +240,21 @@ position = Vector2( 406.051, 1946.55 )
 [node name="Area2D16" parent="AudioStreamPlayer" instance=ExtResource( 9 )]
 position = Vector2( 422.893, 1493.92 )
 orb_color = "red"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 0.111
+anchor_bottom = 0.099
+margin_left = 14.0
+margin_top = 11.0
+margin_right = -33.664
+margin_bottom = -16.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer"]
+margin_right = 66.0
+margin_bottom = 32.0
+text = "Health"

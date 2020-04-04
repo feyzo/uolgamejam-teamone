@@ -5,6 +5,7 @@ func _ready():
 
 
 func _process(delta):
+	$CanvasLayer/MarginContainer/RichTextLabel.text = "Health " + str(Global.Player.health)
 	check_win_state()
 
 

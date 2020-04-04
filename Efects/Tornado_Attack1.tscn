@@ -25,7 +25,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.903685, -26.6605 )
 frames = ExtResource( 1 )
-frame = 51
+frame = 29
 playing = true
 __meta__ = {
 "_edit_lock_": true
