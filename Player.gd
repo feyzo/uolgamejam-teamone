@@ -1,35 +1,34 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
+const MAX_SPEED = 200
+const ACCELERATION = 1000
+const FRICTION = 800
 
-var velocity = Vector2()
-
+var velocity = Vector2.ZERO
 var aim_direction
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
+func get_input(delta):
+	var v = Vector2.ZERO
+	v.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	v.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	v = v.normalized()
 
-func get_input():
-	velocity = Vector2()
-	if Input.is_action_pressed('right'):
-		velocity.x += 1
-	if Input.is_action_pressed('left'):
-		velocity.x -= 1
-	if Input.is_action_pressed('down'):
-		velocity.y += 1
-	if Input.is_action_pressed('up'):
-		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+	if v != Vector2.ZERO:
+		velocity = velocity.move_toward(v * MAX_SPEED, ACCELERATION * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+
+	# velocity = velocity.normalized() * speed
 	aim_direction = self.get_angle_to(get_global_mouse_position())
 
-
 func _physics_process(delta):
-	get_input()
+	get_input(delta)
 	velocity = move_and_slide(velocity)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
