@@ -11,6 +11,10 @@ const MAX_AMMO = 3
 
 export (int) var ammo = 3
 
+
+# added damage to "bullet" node 
+# communicaton that way is easier
+# ignore this damage
 var spells = [
 	{
 		"res": preload("res://Efects/Fireball_Attack1.tscn"),

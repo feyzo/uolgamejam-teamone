@@ -47,6 +47,7 @@ func _on_Aggro_Area_body_exited(body):
 
 
 func _on_Hitbox_body_entered(body):
+	# don't think this works ?
 	if body.is_in_group("projectiles"):
 		health -= 1
 		# TODO Play enemy hurt sound
@@ -54,5 +55,8 @@ func _on_Hitbox_body_entered(body):
 		self.player.health -= 1
 		print("Player damaged")
 		
-func hit():
+func hit(damage_taken):
+	health -= 1
+	$AudioStream_Hurt.play()
 	print("I must die !")
+	print("damage taken = " + str(damage_taken))
