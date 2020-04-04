@@ -6,6 +6,7 @@ var IceExplode = preload("res://Efects/Ice_Expode.tscn")
 var alpha = 0
 var timer_to_die = 0
 var pending_die = false
+export var damage = 1
 
 func start(pos, dir):
 	$AudioStream_Cast.play()
@@ -37,7 +38,7 @@ func _physics_process(delta):
 		$AudioStream_Hit.play()
 		#velocity = velocity.bounce(collision.normal)
 		if collision.collider.has_method("hit"):
-			collision.collider.hit()
+			collision.collider.hit(damage)
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

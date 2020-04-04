@@ -54,5 +54,6 @@ func _on_Hitbox_body_entered(body):
 		self.player.health -= 1
 		print("Player damaged")
 		
-func hit():
+func hit(damage_taken):
 	print("I must die !")
+	print("damage taken = " + str(damage_taken))
