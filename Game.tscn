@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/TestLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GameLevel_001.tscn" type="PackedScene" id=2]
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=3]
 [ext_resource path="res://TentacleEnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game.gd" type="Script" id=5]
@@ -10,11 +10,10 @@
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
 
-[node name="TestLevelNode" parent="." instance=ExtResource( 2 )]
-position = Vector2( -172.895, -102.053 )
+[node name="Level_001" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -70.239, 15.966 )
+position = Vector2( 94.9245, 33.9317 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Player"]
 margin_left = -119.0
@@ -34,10 +33,10 @@ position = Vector2( -210.037, -69.5541 )
 color = Color( 0.352941, 0.556863, 0.67451, 1 )
 
 [node name="FireeEnemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( -196.541, 99.8182 )
+position = Vector2( 121.416, 285.664 )
 health = 5
-speed = 10
+speed = 20
 
 [node name="TentacleEnemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 155.531, 59.5814 )
-speed = 20
+position = Vector2( 287.954, 146.024 )
+speed = 30
