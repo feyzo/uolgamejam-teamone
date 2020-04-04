@@ -1,16 +1,7 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func check_win_state():
+	var enemies_left =get_tree().get_nodes_in_group("enemies").size()
+	var orbs_left = get_tree().get_nodes_in_group("orbs").size()
+	if enemies_left <= 0 or orbs_left <= 0:
+		print("You won the level!")

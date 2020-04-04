@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fireball.gd" type="Script" id=1]
 [ext_resource path="res://Efects/Fireball2.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Audio/FireballCast.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Audio/FireballHit.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -24,5 +26,13 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -24.1751, -0.225933 )
 frames = ExtResource( 2 )
-frame = 39
+frame = 36
 playing = true
+
+[node name="AudioStream_Cast" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 5.0
+
+[node name="AudioStream_Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 8.078

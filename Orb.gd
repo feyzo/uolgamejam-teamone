@@ -18,6 +18,6 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	$".".queue_free()
-	Global.Player.add_orb( orb_color)
-	pass # Replace with function body.
+	if body == Global.Player:
+		$".".queue_free()
+		Global.Player.add_orb( orb_color)
