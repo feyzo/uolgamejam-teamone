@@ -6,6 +6,7 @@ var alpha = 0
 export var damage = 1
 
 func start(pos, dir):
+	$AudioStream_Cast.play()
 	$AnimatedSprite.modulate = Color(1,1,1,0)
 	#rotation = dir
 	position = pos
