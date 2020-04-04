@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TestLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=3]
 [ext_resource path="res://TentacleEnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game.gd" type="Script" id=5]
+[ext_resource path="res://FireEnemy.tscn" type="PackedScene" id=6]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
@@ -34,3 +35,6 @@ position = Vector2( 90.964, 79.785 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -210.037, -69.5541 )
 color = Color( 0.352941, 0.556863, 0.67451, 1 )
+
+[node name="FireeEnemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( -232.909, 78.926 )
