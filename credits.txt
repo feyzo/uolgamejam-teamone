@@ -1,0 +1,21 @@
+Engine : GODOT (Godot_v3.2.1-stable_win64)
+
+Sprites from Itch.io: 
+	Fire Enemy
+	VFX and spells sprites
+	Orbs Sprites 
+	
+Sounds fx:
+
+	various online sources
+	
+Background music made by Team member: Don
+	
+
+Art made by the Team: 
+
+ Tileset for level
+ Main Character
+ Enemies: Tentacle 
+		  MudBlob
+		  
