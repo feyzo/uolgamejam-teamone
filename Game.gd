@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	$AudioStreamPlayer.play()
+	
 func check_win_state():
 	var enemies_left =get_tree().get_nodes_in_group("enemies").size()
 	var orbs_left = get_tree().get_nodes_in_group("orbs").size()
