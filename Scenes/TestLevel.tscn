@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://PNG/Tiles/background.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/BaseFloors.tres" type="TileSet" id=2]
 [ext_resource path="res://Tilesets/Base_noAutoTile.tres" type="TileSet" id=3]
 
 [node name="TestLevelNode" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -678.41
+margin_top = -262.354
+margin_right = 1321.59
+margin_bottom = 1737.65
+rect_min_size = Vector2( 2000, 2000 )
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap_Floors" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
