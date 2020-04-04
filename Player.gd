@@ -64,7 +64,8 @@ func get_input(delta):
 	if Input.is_action_just_pressed("fire") and ammo > 0:
 		shoot()
 	if Input.is_action_just_pressed("change_spell"):
-		change_spell()
+		#change_spell()
+		pass
 	
 	aim_direction = self.get_angle_to(get_global_mouse_position())
 
