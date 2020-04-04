@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
+export (int) var health = 3
 
 var spells = [
 	{
