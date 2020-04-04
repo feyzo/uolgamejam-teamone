@@ -3,7 +3,7 @@ extends KinematicBody2D
 # TODO Set = to reference to player scene
 onready var player = get_node("../Player")
 
-var health = 3
+export var health = 3
 
 var state = 'calm'
 
