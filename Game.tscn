@@ -29,14 +29,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TentacleEnemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 90.964, 79.785 )
-speed = 20
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -210.037, -69.5541 )
 color = Color( 0.352941, 0.556863, 0.67451, 1 )
 
 [node name="FireeEnemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( -232.909, 78.926 )
+position = Vector2( -196.541, 99.8182 )
 health = 5
+speed = 10
+
+[node name="TentacleEnemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 155.531, 59.5814 )
+speed = 20
