@@ -27,6 +27,7 @@ var aim_direction
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.Player = self
 	pass # Replace with function body.
 
 
@@ -72,6 +73,9 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
+func add_orb(color):
+	pass
+	print("Orb "+ color + " collected ... do something with it")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

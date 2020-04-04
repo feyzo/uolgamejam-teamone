@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Tentical_Monster_Death.ogg-e97b3179d4268dc2a3d17802f6726411.oggstr"
+
+[deps]
+
+source_file="res://Audio/Tentical_Monster_Death.ogg"
+dest_files=[ "res://.import/Tentical_Monster_Death.ogg-e97b3179d4268dc2a3d17802f6726411.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
