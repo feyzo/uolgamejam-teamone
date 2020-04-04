@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
+const MAX_SPEED = 200
+const ACCELERATION = 1000
+const FRICTION = 800
 
 var spells = [
 	{
@@ -21,7 +23,7 @@ var spells = [
 ]
 var current_bullet = spells[0]
 var spell_index = 0
-var velocity = Vector2()
+var velocity = Vector2.ZERO
 
 var aim_direction
 
@@ -31,23 +33,26 @@ func _ready():
 	pass # Replace with function body.
 
 
-func get_input():
-	velocity = Vector2()
-	if Input.is_action_pressed('right'):
-		velocity.x += 1
-		$Sprite.flip_h = false
-	if Input.is_action_pressed('left'):
-		velocity.x -= 1
+func get_input(delta):
+	var v = Vector2.ZERO
+	v.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+	v.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	v = v.normalized()
+
+	$Sprite.flip_h = false
+	if v.x < 0:
 		$Sprite.flip_h = true
-	if Input.is_action_pressed('down'):
-		velocity.y += 1
-	if Input.is_action_pressed('up'):
-		velocity.y -= 1
+
+	if v != Vector2.ZERO:
+		velocity = velocity.move_toward(v * MAX_SPEED, ACCELERATION * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+
 	if Input.is_action_just_pressed("fire"):
 		shoot()
 	if Input.is_action_just_pressed("change_spell"):
 		change_spell()
-	velocity = velocity.normalized() * speed
+	
 	aim_direction = self.get_angle_to(get_global_mouse_position())
 
 func change_spell():
@@ -69,7 +74,7 @@ func shoot():
 	get_parent().add_child(b)
 
 func _physics_process(delta):
-	get_input()
+	get_input(delta)
 	velocity = move_and_slide(velocity)
 
 func add_orb(color):
