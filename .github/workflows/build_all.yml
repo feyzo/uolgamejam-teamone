@@ -21,7 +21,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Move files
         run: |
-          mv ~/.local/share/godot/builds/0 -d ~/work/uolgamejam-teamone/uolgamejam-teamone/html5
+          mv ~/.local/share/godot/builds/0 ~/work/uolgamejam-teamone/uolgamejam-teamone/html5
 
       - name: 'Deploy to Netlify'
         uses: netlify/actions/cli@master
