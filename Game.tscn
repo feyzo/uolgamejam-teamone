@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameLevel_001.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://TentacleEnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game.gd" type="Script" id=5]
 [ext_resource path="res://FireEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://BlobEnemy.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
@@ -33,10 +34,21 @@ position = Vector2( -210.037, -69.5541 )
 color = Color( 0.352941, 0.556863, 0.67451, 1 )
 
 [node name="FireeEnemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 121.416, 285.664 )
+position = Vector2( 1380.41, 158.411 )
+health = 5
+speed = 20
+
+[node name="FireeEnemy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1390.34, 609.663 )
 health = 5
 speed = 20
 
 [node name="TentacleEnemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 287.954, 146.024 )
+position = Vector2( 884.509, 359.015 )
 speed = 30
+
+[node name="BlobEnemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 580.924, 587.99 )
+
+[node name="BlobEnemy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 566.484, 164.715 )

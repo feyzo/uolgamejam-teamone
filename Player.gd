@@ -87,6 +87,8 @@ func shoot():
 	ammo -= 1
 
 func _physics_process(delta):
+	if health < 0:
+		die()
 	get_input(delta)
 	velocity = move_and_slide(velocity)
 
@@ -94,6 +96,9 @@ func add_orb(color):
 	change_spell()
 	print("Orb "+ color + " collected ... do something with it")
 
+func die():
+	self.queue_free()
+	print("Game over!")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
