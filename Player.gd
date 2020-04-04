@@ -64,9 +64,7 @@ func change_spell():
 func shoot():
 	# "Muzzle" is a Position2D placed at the barrel of the gun.
 	var b = current_bullet.res.instance()
-	var pos = $Muzzle.global_position
-	pos.x -= 55
-	b.start(pos, aim_direction)
+	b.start($Muzzle.global_position, aim_direction)
 	get_parent().add_child(b)
 
 func _physics_process(delta):
