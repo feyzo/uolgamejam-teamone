@@ -11,5 +11,5 @@ dest_files=[ "res://.import/EmberDies.ogg-1669a51284f702f4ca43173675ce5462.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

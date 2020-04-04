@@ -11,5 +11,5 @@ dest_files=[ "res://.import/TenticalMonsterHit.ogg-f4a99ad8f4ddc9370a3d43f0d893e
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/BlobAgro.ogg-075459c55f7be0c0449d13cbe6c3a774.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
