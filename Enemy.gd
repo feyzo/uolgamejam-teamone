@@ -31,7 +31,7 @@ func _physics_process(delta):
 			move_and_collide(direction * speed * delta)
 
 func die():
-	# TODO Call player swap spell function
+	Global.Player.change_spell()
 	# TODO Play death sound
 	self.queue_free()
 
