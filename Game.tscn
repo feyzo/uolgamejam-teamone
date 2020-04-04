@@ -12,3 +12,11 @@ position = Vector2( 102.656, 118.019 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="TestLevelNode"]
 color = Color( 0.352941, 0.556863, 0.67451, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TestLevelNode"]
+margin_right = 87.0
+margin_bottom = 16.0
+text = "Fireball"
+__meta__ = {
+"_edit_use_anchors_": false
+}

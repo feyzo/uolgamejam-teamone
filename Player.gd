@@ -2,17 +2,28 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 
-
-var Bullet = preload("res://Efects/Fireball_Attack1.tscn")
-var Tornado = preload("res://Efects/Tornado_Attack1.tscn")
-var IceAttack = preload("res://Efects/Ice_Attack1.tscn")
-var current_bullet = Bullet
+var spells = [
+	{
+		"res": preload("res://Efects/Fireball_Attack1.tscn"),
+		"name": "Fireball",
+		"damage": 1,
+	},
+	{
+		"res": preload("res://Efects/Tornado_Attack1.tscn"),
+		"name": "Tornado",
+		"damage": 2,
+	},
+	{
+		"res": preload("res://Efects/Ice_Attack1.tscn"),
+		"name": "Ice",
+		"damage": 1,
+	}
+]
+var current_bullet = spells[0]
 var spell_index = 0
-var spells = [Bullet, Tornado, IceAttack]
 var velocity = Vector2()
 
 var aim_direction
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,17 +49,20 @@ func get_input():
 
 func change_spell():
 	spell_index += 1
-	if spell_index > spells.size() -1 :
+	if spell_index > spells.size() - 1:
 		spell_index = 0
+
 	current_bullet = spells[spell_index]
+
 	print("changed spell")
+	get_parent().get_node("RichTextLabel").set_text(current_bullet.name)
 	
 func shoot():
 	# "Muzzle" is a Position2D placed at the barrel of the gun.
-	var b = current_bullet.instance()
+	var b = current_bullet.res.instance()
 	b.start($Muzzle.global_position, aim_direction)
 	get_parent().add_child(b)
-	
+
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
