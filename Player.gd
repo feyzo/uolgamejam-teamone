@@ -4,6 +4,9 @@ export (int) var speed = 200
 
 var velocity = Vector2()
 
+var aim_direction
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,6 +23,8 @@ func get_input():
 	if Input.is_action_pressed('up'):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
+	aim_direction = self.get_angle_to(get_global_mouse_position())
+
 
 func _physics_process(delta):
 	get_input()
