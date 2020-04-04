@@ -9,6 +9,8 @@ const FRICTION = 800
 
 const MAX_AMMO = 3
 
+const GAME_OVER_SCREEN = preload("res://GameOverScreen.tscn")
+
 export (int) var ammo = 3
 
 
@@ -41,7 +43,7 @@ var aim_direction
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.Player = self
-	pass # Replace with function body.
+	self.add_to_group("player")
 
 
 func get_input(delta):
@@ -87,7 +89,7 @@ func shoot():
 	ammo -= 1
 
 func _physics_process(delta):
-	if health < 0:
+	if health <= 0:
 		die()
 	get_input(delta)
 	velocity = move_and_slide(velocity)
@@ -97,8 +99,9 @@ func add_orb(color):
 	print("Orb "+ color + " collected ... do something with it")
 
 func die():
+	Global.add_child(GAME_OVER_SCREEN.instance())
 	self.queue_free()
-	print("Game over!")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
