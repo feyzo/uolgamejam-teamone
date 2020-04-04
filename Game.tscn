@@ -9,3 +9,6 @@
 
 [node name="Player" parent="TestLevelNode" instance=ExtResource( 1 )]
 position = Vector2( 102.656, 118.019 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="TestLevelNode"]
+color = Color( 0.309804, 0.513726, 0.635294, 1 )
